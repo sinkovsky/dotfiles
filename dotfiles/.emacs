@@ -1,5 +1,4 @@
 ;; window size
-
 (setq initial-frame-alist 
       '((top . 10) (left . 50)
         (width . 130) (height . 50)))
@@ -29,6 +28,9 @@
 
 ;; adding distel to path
 (add-to-list 'load-path "~/devel/dotfiles/elisp/distel/elisp")
+(setq erlang-root-dir "~/erlang/")
+(setq exec-path (cons "~/erlang/bin" exec-path))
+(require 'erlang-start)
 
 ;; enabling desktop mode
 (desktop-save-mode 1)
