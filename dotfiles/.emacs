@@ -32,8 +32,18 @@
 (setq exec-path (cons "~/erlang/bin" exec-path))
 (require 'erlang-start)
 
+;; path so brew installed programs are accessible in shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
+;; making hash symbol work as expected
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+
 ;; enabling desktop mode
 (desktop-save-mode 1)
+
+;; nice navigartion between frames
+(windmove-default-keybindings 'meta)
 
 ;; erlang
 (require 'distel)
@@ -41,3 +51,4 @@
 
 ;; git
 (require 'magit)
+
